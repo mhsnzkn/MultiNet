@@ -24,7 +24,7 @@ namespace MultiNet
         private void Form1_Load(object sender, EventArgs e)
         {
             txtEttn.Text = Guid.NewGuid().ToString().ToUpper();
-            txtSehir.Text = "Ankara";
+            txtSehir.Text = "ANKARA";
             txtTc.Text = "111111111111";
         }
 
@@ -199,7 +199,7 @@ namespace MultiNet
             var kdvTutar = toplamTutar * kdvoran;
             txtMalKdvTutar.Text = txtHesaplananKdv.Text = kdvTutar.ToString("N");
             txtToplamVergi.Text = txtOdenecekTutar.Text = (toplamTutar + kdvTutar).ToString("N");
-            txtGenelAciklama.Text = YaziyaCevir(toplamTutar + kdvTutar);
+            txtGenelAciklama.Text = "YALNIZ "+YaziyaCevir(toplamTutar + kdvTutar);
         }
 
 
