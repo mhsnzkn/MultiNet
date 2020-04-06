@@ -82,11 +82,26 @@
             this.label22 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuItemGiris = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemBelgeSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelSorgu = new System.Windows.Forms.Panel();
+            this.txtBelgeNoSorgu = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dgvBelgeNoArama = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBoxIslem = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblBelgeNoSearch = new System.Windows.Forms.Label();
+            this.btnSil = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.panelSorgu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBelgeNoArama)).BeginInit();
+            this.groupBoxIslem.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAdSoyad
@@ -280,7 +295,7 @@
             this.txtMalMiktar.Name = "txtMalMiktar";
             this.txtMalMiktar.Size = new System.Drawing.Size(118, 20);
             this.txtMalMiktar.TabIndex = 22;
-            this.txtMalMiktar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMalMiktar_KeyDown);
+            this.txtMalMiktar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMalMiktar_KeyUp);
             // 
             // label13
             // 
@@ -297,6 +312,7 @@
             this.txtMalBirimFiyat.Name = "txtMalBirimFiyat";
             this.txtMalBirimFiyat.Size = new System.Drawing.Size(118, 20);
             this.txtMalBirimFiyat.TabIndex = 24;
+            this.txtMalBirimFiyat.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMalMiktar_KeyUp);
             // 
             // label14
             // 
@@ -313,6 +329,7 @@
             this.txtMalKdvOrani.Name = "txtMalKdvOrani";
             this.txtMalKdvOrani.Size = new System.Drawing.Size(118, 20);
             this.txtMalKdvOrani.TabIndex = 26;
+            this.txtMalKdvOrani.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMalMiktar_KeyUp);
             // 
             // label15
             // 
@@ -508,7 +525,7 @@
             // 
             // txtKartNo
             // 
-            this.txtKartNo.Location = new System.Drawing.Point(452, 45);
+            this.txtKartNo.Location = new System.Drawing.Point(527, 45);
             this.txtKartNo.Name = "txtKartNo";
             this.txtKartNo.Size = new System.Drawing.Size(118, 20);
             this.txtKartNo.TabIndex = 22;
@@ -516,7 +533,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(458, 16);
+            this.label18.Location = new System.Drawing.Point(533, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 23;
@@ -524,7 +541,7 @@
             // 
             // txtOdemeKosulu
             // 
-            this.txtOdemeKosulu.Location = new System.Drawing.Point(204, 45);
+            this.txtOdemeKosulu.Location = new System.Drawing.Point(157, 45);
             this.txtOdemeKosulu.Name = "txtOdemeKosulu";
             this.txtOdemeKosulu.Size = new System.Drawing.Size(118, 20);
             this.txtOdemeKosulu.TabIndex = 18;
@@ -532,7 +549,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(210, 16);
+            this.label20.Location = new System.Drawing.Point(163, 16);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(76, 13);
             this.label20.TabIndex = 19;
@@ -540,15 +557,15 @@
             // 
             // txtGenelAciklama
             // 
-            this.txtGenelAciklama.Location = new System.Drawing.Point(328, 45);
+            this.txtGenelAciklama.Location = new System.Drawing.Point(281, 45);
             this.txtGenelAciklama.Name = "txtGenelAciklama";
-            this.txtGenelAciklama.Size = new System.Drawing.Size(118, 20);
+            this.txtGenelAciklama.Size = new System.Drawing.Size(242, 20);
             this.txtGenelAciklama.TabIndex = 20;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(334, 16);
+            this.label22.Location = new System.Drawing.Point(362, 16);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(92, 13);
             this.label22.TabIndex = 21;
@@ -566,11 +583,120 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemGiris,
+            this.MenuItemBelgeSearch});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 38;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // MenuItemGiris
+            // 
+            this.MenuItemGiris.Name = "MenuItemGiris";
+            this.MenuItemGiris.Size = new System.Drawing.Size(42, 20);
+            this.MenuItemGiris.Text = "Giriş";
+            this.MenuItemGiris.Click += new System.EventHandler(this.MenuItemGiris_Click);
+            // 
+            // MenuItemBelgeSearch
+            // 
+            this.MenuItemBelgeSearch.Name = "MenuItemBelgeSearch";
+            this.MenuItemBelgeSearch.Size = new System.Drawing.Size(109, 20);
+            this.MenuItemBelgeSearch.Text = "Belge No Kontrol";
+            this.MenuItemBelgeSearch.Click += new System.EventHandler(this.MenuItemBelgeSearch_Click);
+            // 
+            // panelSorgu
+            // 
+            this.panelSorgu.Controls.Add(this.groupBoxIslem);
+            this.panelSorgu.Controls.Add(this.btnSearch);
+            this.panelSorgu.Controls.Add(this.dgvBelgeNoArama);
+            this.panelSorgu.Controls.Add(this.txtBelgeNoSorgu);
+            this.panelSorgu.Controls.Add(this.label24);
+            this.panelSorgu.Location = new System.Drawing.Point(0, 27);
+            this.panelSorgu.Name = "panelSorgu";
+            this.panelSorgu.Size = new System.Drawing.Size(800, 586);
+            this.panelSorgu.TabIndex = 39;
+            this.panelSorgu.Visible = false;
+            // 
+            // txtBelgeNoSorgu
+            // 
+            this.txtBelgeNoSorgu.Location = new System.Drawing.Point(119, 111);
+            this.txtBelgeNoSorgu.Name = "txtBelgeNoSorgu";
+            this.txtBelgeNoSorgu.Size = new System.Drawing.Size(155, 20);
+            this.txtBelgeNoSorgu.TabIndex = 2;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(46, 116);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(51, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Belge No";
+            // 
+            // dgvBelgeNoArama
+            // 
+            this.dgvBelgeNoArama.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvBelgeNoArama.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBelgeNoArama.Location = new System.Drawing.Point(49, 183);
+            this.dgvBelgeNoArama.Name = "dgvBelgeNoArama";
+            this.dgvBelgeNoArama.Size = new System.Drawing.Size(409, 261);
+            this.dgvBelgeNoArama.TabIndex = 4;
+            this.dgvBelgeNoArama.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBelgeNoArama_CellClick);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(313, 108);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Ara";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // groupBoxIslem
+            // 
+            this.groupBoxIslem.Controls.Add(this.btnSil);
+            this.groupBoxIslem.Controls.Add(this.lblBelgeNoSearch);
+            this.groupBoxIslem.Controls.Add(this.label25);
+            this.groupBoxIslem.Location = new System.Drawing.Point(550, 186);
+            this.groupBoxIslem.Name = "groupBoxIslem";
+            this.groupBoxIslem.Size = new System.Drawing.Size(200, 192);
+            this.groupBoxIslem.TabIndex = 6;
+            this.groupBoxIslem.TabStop = false;
+            this.groupBoxIslem.Text = "İşlem";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(22, 43);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Belge No";
+            // 
+            // lblBelgeNoSearch
+            // 
+            this.lblBelgeNoSearch.AutoSize = true;
+            this.lblBelgeNoSearch.Location = new System.Drawing.Point(79, 43);
+            this.lblBelgeNoSearch.Name = "lblBelgeNoSearch";
+            this.lblBelgeNoSearch.Size = new System.Drawing.Size(0, 13);
+            this.lblBelgeNoSearch.TabIndex = 1;
+            // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.Red;
+            this.btnSil.Enabled = false;
+            this.btnSil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSil.Location = new System.Drawing.Point(60, 113);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 2;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // Form1
             // 
@@ -578,6 +704,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 612);
+            this.Controls.Add(this.panelSorgu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -600,6 +727,13 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panelSorgu.ResumeLayout(false);
+            this.panelSorgu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBelgeNoArama)).EndInit();
+            this.groupBoxIslem.ResumeLayout(false);
+            this.groupBoxIslem.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,6 +794,17 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TextBox txtKartNo;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemGiris;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemBelgeSearch;
+        private System.Windows.Forms.Panel panelSorgu;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvBelgeNoArama;
+        private System.Windows.Forms.TextBox txtBelgeNoSorgu;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBoxIslem;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Label lblBelgeNoSearch;
+        private System.Windows.Forms.Label label25;
     }
 }
 
